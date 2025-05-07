@@ -32,7 +32,6 @@ const formSchema = z.object({
   firstName: z.string().min(2).max(255),
   lastName: z.string().min(2).max(255),
   email: z.string().email(),
-  subject: z.string().min(2).max(255),
   message: z.string(),
 });
 
@@ -43,17 +42,13 @@ export const ContactSection = () => {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "Web Development",
       message: "",
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    const { firstName, lastName, email, subject, message } = values;
-    console.log(values);
-
-    const mailToLink = `mailto:leomirandadev@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
-
+    const { firstName, lastName, email, message } = values;
+    const mailToLink = `mailto:leomirandadev@gmail.com?subject=Contact from Website&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
     window.location.href = mailToLink;
   }
 
@@ -65,55 +60,60 @@ export const ContactSection = () => {
             <h2 className="text-lg text-primary mb-2 tracking-wider">
               Contact
             </h2>
-
             <h2 className="text-3xl md:text-4xl font-bold">Connect With Sahu Metals</h2>
           </div>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
             Have questions about our equipment, services, or support? Reach out to Sahu Metals and our team will be happy to assist you.
           </p>
-
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mb-6">
             <div>
               <div className="flex gap-2 mb-1">
                 <Building2 />
                 <div className="font-bold">Find us</div>
               </div>
-
-              <div>123 Greenfield Road, Agri City, Country 123456</div>
+              <div>G-510(1st),IPIA, Road no. 7, Anantpura, Kota, Rajasthan6</div>
             </div>
-
             <div>
               <div className="flex gap-2 mb-1">
                 <Phone />
                 <div className="font-bold">Call us</div>
               </div>
-
-              <div>+1 (800) 555-1234</div>
+              <div>+91 9928398987</div>
+              <div>+91 9829961487</div>
+              <div>+91 6378140573</div>
             </div>
-
             <div>
               <div className="flex gap-2 mb-1">
                 <Mail />
                 <div className="font-bold">Mail US</div>
               </div>
-
               <div>info@sahumetals.com</div>
             </div>
-
             <div>
               <div className="flex gap-2">
                 <Clock />
                 <div className="font-bold">Visit us</div>
               </div>
-
               <div>
                 <div>Monday - Friday</div>
                 <div>8AM - 4PM</div>
               </div>
             </div>
           </div>
+          {/* Map Section */}
+          <div className="w-full h-64 rounded overflow-hidden mb-8">
+            <iframe
+              src="https://www.google.com/maps?q=G-510(1st),IPIA,Road+no.+7,Anantpura,Kota,Rajasthan&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Sahu Metals Location"
+            ></iframe>
+          </div>
         </div>
-
         <Card className="bg-muted/60 dark:bg-card">
           <CardHeader className="text-primary text-2xl"> </CardHeader>
           <CardContent>
@@ -150,7 +150,6 @@ export const ContactSection = () => {
                     )}
                   />
                 </div>
-
                 <div className="flex flex-col gap-1.5">
                   <FormField
                     control={form.control}
@@ -170,45 +169,6 @@ export const ContactSection = () => {
                     )}
                   />
                 </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a subject" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="Web Development">
-                              Web Development
-                            </SelectItem>
-                            <SelectItem value="Mobile Development">
-                              Mobile Development
-                            </SelectItem>
-                            <SelectItem value="Figma Design">
-                              Figma Design
-                            </SelectItem>
-                            <SelectItem value="REST API">REST API</SelectItem>
-                            <SelectItem value="FullStack Project">
-                              FullStack Project
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
                 <div className="flex flex-col gap-1.5">
                   <FormField
                     control={form.control}
@@ -224,18 +184,15 @@ export const ContactSection = () => {
                             {...field}
                           />
                         </FormControl>
-
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-
                 <Button className="mt-4">Send message</Button>
               </form>
             </Form>
           </CardContent>
-
           <CardFooter></CardFooter>
         </Card>
       </section>
