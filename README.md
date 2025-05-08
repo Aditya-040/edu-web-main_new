@@ -1,56 +1,29 @@
-# Shadcn Landing Page Template
+Create a folder with two subfolders: client (React frontend) and server (Node + Express backend).
 
-## <a href="https://ui.shadcn.com/" target="_blank">Shadcn</a> + <a href="https://nextjs.org/" target="_blank">Next.js</a> + <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> + <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>.
+In the server folder, run npm init -y and install express, mongoose, cors, and dotenv.
 
-### This is a project conversion <a href="https://github.com/leoMirandaa/shadcn-vue-landing-page" target="_blank">Shadcn-Vue</a> to NextJS
+Set up basic Express server and connect it to MongoDB using Mongoose.
 
-![Alt text](./public/demo-img.jpg)
+In the client folder, run npx create-react-app . to set up the React app.
 
-## Sections
+Build your frontend and connect it to the backend using axios and the backend URL.
 
-- [x] Navbar
-- [x] Sidebar(mobile)
-- [x] Hero
-- [x] Sponsors
-- [x] Benefits
-- [x] Features
-- [x] Testimonials
-- [x] Team
-- [x] Community
-- [x] Contact
-- [x] Pricing
-- [x] Frequently Asked Questions(FAQ)
-- [x] Services
-- [x] Footer
+Push the server folder to GitHub.
 
-## Features
+Go to render.com, connect your GitHub, and deploy the backend as a web service.
 
-- [x] Fully Responsive Design
-- [x] User Friendly Navigation
-- [x] Dark Mode
+Add environment variables like PORT, MONGO_URI on Render.
 
-## How to install
+Copy the Render backend URL once deployed.
 
-1. Clone this repositoy:
+Push the client folder to GitHub.
 
-```bash
-git clone https://github.com/nobruf/shadcn-landing-page.git
-```
+Go to vercel.com, import your frontend GitHub repo, and set the root directory as client.
 
-2. Go into project
+Add the Render backend URL as an environment variable if needed.
 
-```bash
-cd shadcn-landing-page
-```
+Click "Deploy" on Vercel.
 
-3. Install dependencies
+Test the live frontend and check if it talks to the backend.
 
-```bash
-npm install
-```
-
-4. Run project
-
-```bash
-npm run dev
-```
+Done! Your MERN app is now live with frontend on Vercel and backend on Render.
