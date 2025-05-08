@@ -1,5 +1,5 @@
 "use client";
-import { ChevronsDown, Github, Menu } from "lucide-react";
+import { ChevronsDown, Github, Menu, Phone } from "lucide-react";
 import React from "react";
 import {
   Sheet,
@@ -37,10 +37,6 @@ const routeList: RouteProps[] = [
   {
     href: "#testimonials",
     label: "Testimonials",
-  },
-  {
-    href: "#team",
-    label: "Team",
   },
   {
     href: "#contact",
@@ -150,10 +146,16 @@ export const Navbar = () => {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden lg:flex">
+      <div className="hidden lg:flex items-center space-x-4">
+        <Link href="https://wa.me/yourwhatsappnumber" target="_blank" className="flex items-center">
+          <Image src="/wh491wad6-whatsapp-icon-logo-whatsapp-icon-whatsapp-logo-call-logo-instagram-logo-new.png" alt="WhatsApp" width={80} height={80} />
+        </Link>
+        <a href="tel:+1234567890" className="flex items-center">
+          <Button variant="ghost" size="icon">
+            <Phone className="h-5 w-5" />
+          </Button>
+        </a>
         <ToggleTheme />
-
-        
       </div>
     </header>
   );

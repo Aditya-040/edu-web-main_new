@@ -45,7 +45,7 @@ export default function Home() {
       <HeroSection />
       <SponsorsSection />
       <ProductsSection />
-      <BenefitsSection />
+      {/* remove */}
       <FeaturesSection />
      
       <TestimonialSection />

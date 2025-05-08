@@ -111,21 +111,21 @@ const ProductDetailPage = () => {
         </div>
       </div>
       {product.specifications?.length > 0 && (
-        <div id="specifications" className="mt-12 bg-white rounded shadow p-6">
+        <div id="specifications" className="mt-12 rounded shadow p-6" style={{ backgroundColor: 'var(--table-background)', color: 'var(--table-text)' }}>
           <h2 className="text-2xl font-bold mb-4">Technical Specifications</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full border">
               <thead>
                 <tr>
-                  <th className="px-4 py-2 border">Name</th>
-                  <th className="px-4 py-2 border">Value</th>
+                  <th className="px-4 py-2 border" style={{ backgroundColor: 'var(--table-background)', color: 'var(--table-text)' }}>Name</th>
+                  <th className="px-4 py-2 border" style={{ backgroundColor: 'var(--table-background)', color: 'var(--table-text)' }}>Value</th>
                 </tr>
               </thead>
               <tbody>
                 {product.specifications.map((spec: any, index: number) => (
                   <tr key={index}>
-                    <td className="px-4 py-2 border">{spec.name}</td>
-                    <td className="px-4 py-2 border">{spec.value}</td>
+                    <td className="px-4 py-2 border" style={{ backgroundColor: 'var(--table-background)', color: 'var(--table-text)' }}>{spec.name}</td>
+                    <td className="px-4 py-2 border" style={{ backgroundColor: 'var(--table-background)', color: 'var(--table-text)' }}>{spec.value}</td>
                   </tr>
                 ))}
               </tbody>

@@ -34,11 +34,6 @@ export const HeroSection = () => {
         transition: "background-image 0.8s ease-in-out",
       }}
     >
-      <div
-        className={`absolute inset-0 z-0 ${
-          theme === "light" ? "bg-background/70" : "bg-background/80"
-        }`}
-      />
       <div className="relative z-10 grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
         <div className="text-center space-y-8">
           <Badge variant="outline" className="text-sm py-2 drop-shadow-md">

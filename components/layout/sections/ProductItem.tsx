@@ -25,18 +25,22 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   return (
     <Link href={`/products/${_id}`} className="block group">
       <div className="bg-muted/60 dark:bg-card rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col items-center p-4 h-full">
-        <div className="w-full h-40 flex items-center justify-center mb-3 bg-white rounded">
+        <div
+          className="w-3/4 h-60 flex items-center justify-center mb-3 rounded"
+          style={{ backgroundColor: 'var(--background-color)' }}
+        >
           <Image
             src={getFullImageUrl(image)}
             alt={title}
-            width={200}
-            height={160}
-            className="object-contain w-auto h-32"
+            width={240}
+            height={200}
+            className="object-contain w-auto h-48"
             onError={(e: any) => {
               e.target.src = '/placeholder.png';
             }}
           />
         </div>
+        <div className="w-full border-t border-gray-300 dark:border-gray-600 my-2"></div>
         <div className="w-full text-center">
           <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">{title}</h3>
         </div>

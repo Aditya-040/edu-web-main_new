@@ -42,7 +42,11 @@ const sponsors: sponsorsProps[] = [
 
 export const SponsorsSection = () => {
   return (
-    <section id="sponsors" className="w-full flex justify-center items-center py-8 bg-[#f8f7fc]">
+    <section
+      id="sponsors"
+      className="w-full flex justify-center items-center py-8"
+      style={{ backgroundColor: 'var(--background-color)' }}
+    >
       <div className="flex flex-row flex-nowrap justify-center items-center gap-8 sm:gap-12 md:gap-16 w-full max-w-5xl overflow-x-auto px-2">
         <img src="/ee0e326d-4353-4b9e-b9aa-402f71880b4f.png" alt="Badge 1" className="h-8 sm:h-16 md:h-20 lg:h-24 object-contain" />
         <img src="/image.png" alt="Badge 2" className="h-8 sm:h-16 md:h-20 lg:h-24 object-contain" />
