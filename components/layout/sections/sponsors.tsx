@@ -44,7 +44,7 @@ export const SponsorsSection = () => {
   return (
     <section
       id="sponsors"
-      className="w-full flex justify-center items-center py-8"
+      className="w-full flex justify-center items-center py-16"
       style={{ backgroundColor: 'var(--background-color)' }}
     >
       <div className="flex flex-row flex-nowrap justify-center items-center gap-8 sm:gap-12 md:gap-16 w-full max-w-5xl overflow-x-auto px-2">

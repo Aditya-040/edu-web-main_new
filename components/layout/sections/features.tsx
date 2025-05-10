@@ -65,21 +65,21 @@ export const FeaturesSection = () => {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {featureList.map(({ icon, title, description }) => (
           <div key={title}>
-            <Card className="h-full bg-background border-0 shadow-none">
+            <Card className="h-full bg-background border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="flex justify-center items-center">
-                <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
+                <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4 group-hover:ring-primary/20 transition-all duration-300">
                   <Icon
                     name={icon as keyof typeof icons}
                     size={24}
                     color="hsl(var(--primary))"
-                    className="text-primary"
+                    className="text-primary group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
 
-                <CardTitle>{title}</CardTitle>
+                <CardTitle className="group-hover:text-primary transition-colors duration-300">{title}</CardTitle>
               </CardHeader>
 
-              <CardContent className="text-muted-foreground text-center">
+              <CardContent className="text-muted-foreground text-center group-hover:text-foreground transition-colors duration-300">
                 {description}
               </CardContent>
             </Card>

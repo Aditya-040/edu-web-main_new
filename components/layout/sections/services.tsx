@@ -61,13 +61,29 @@ export const ProductsSection = ({ limit }: { limit?: number }) => {
           <ProductItem key={product._id} product={product} />
         ))}
       </div>
-      {limit && (
-        <div className="flex justify-center mt-8">
-          <Link href="/products" className="inline-block px-6 py-2 bg-primary text-white rounded hover:bg-primary/80 transition">
-            Explore More &rarr;
-          </Link>
-        </div>
-      )}
+      <div className="flex justify-center mt-12">
+        <Link 
+          href="/products" 
+          className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+        >
+          Explore More Products
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="ml-2 h-5 w-5"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
     </section>
   );
 };

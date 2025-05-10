@@ -6,8 +6,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* *=========== Default theme =========== */
-/* @layer base {
+/* ========== Default Theme (Light) ========== */
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -40,40 +40,43 @@ html {
 
     --radius: 0.5rem;
   }
+}
 
+/* ========== 🍃 Updated Dark Theme ========== */
+@layer base {
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 100 20% 6%;
+    --foreground: 90 30% 90%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --card: 100 15% 10%;
+    --card-foreground: 90 30% 90%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 100 15% 10%;
+    --popover-foreground: 90 30% 90%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --primary: 74 61% 55%;               /* #a8d439 */
+    --primary-foreground: 100 20% 6%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --secondary: 100 15% 15%;
+    --secondary-foreground: 90 30% 90%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --muted: 100 10% 20%;
+    --muted-foreground: 90 20% 70%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --accent: 74 40% 30%;
+    --accent-foreground: 90 30% 90%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 65% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 240 4.9% 83.9%;
-  }
-} */
+    --border: 90 10% 25%;
+    --input: 90 10% 25%;
 
-/* *=========== Orange theme =========== */
+    --ring: 74 61% 55%;
+  }
+}
+
+/* ========== Orange Theme ========== */
 @layer base {
   :root {
     --background: 120 40% 98%;
@@ -137,6 +140,7 @@ html {
   }
 }
 
+/* ========== Shadows ========== */
 .shadow-light {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.085);
 }
@@ -145,10 +149,12 @@ html {
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.141);
 }
 
+/* ========== Global Element Styling ========== */
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
